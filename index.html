@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/webphim.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="thanh-bar-o-ngoai">
+  <button class="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="closeSidebar()"><i class="fa-solid fa-xmark"></i></button>
+<ul class="sidebar-menu">
+    <li>Trang chủ</li>
+
+    <li onclick="toggleSubmenu('genre')">
+      Thể loại<span class="plus" id="plus-genre">+</span>
+    </li>
+    <ul class="submenu" id="submenu-genre">
+      <li>Hành động</li>
+      <li>Tình cảm</li>
+      <li>Hoạt hình</li>
+    </ul>
+
+    <li onclick="toggleSubmenu('country')">
+      Quốc gia <span class="plus" id="plus-country">+</span>
+    </li>
+    <ul class="submenu" id="submenu-country">
+      <li>Việt Nam</li>
+      <li>Hàn Quốc</li>
+      <li>Mỹ</li>
+    </ul>
+
+    <li>Phim Bộ</li>
+    <li>Phim Lẻ</li>
+    <li>Phim Chiếu Rạp</li>
+    <li><a href="#"><i class="fas fa-right-to-bracket"></i> Đăng nhập</a></li>
+    <li><a href="#"><i class="fas fa-user-plus"></i> Đăng ký</a></li>
+  </ul>
+</div>
+<div class="topbar">
+        <div class="logo">NHÓM 5 FILM<br><span class="tieude">Phim Online</span></div>
+         <button class="search-toggle" onclick="toggleSearchBar()">
+               <i class="fas fa-search"></i>
+          </button>
+        <div class="search-bar" id="searchBar">
+            <label class="timkiem" for="search"><i class="fas fa-search"></i></label>
+          <input id="search" type="text" placeholder="Nhập tên phim bạn muốn tìm kiếm...">
+        </div>
+        <div class="user-actions">
+          <a href="#"><i class="fas fa-right-to-bracket"></i> Đăng nhập</a>
+          <a href="#"><i class="fas fa-user-plus"></i> Đăng ký</a>
+        </div>
+</div>
+</div>
+<div class="menu">
+  <a href="#">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="#">THỂ LOẠI▼</a>
+    <div class="dropdown-content">
+      <a href="#">Hành Động</a>
+      <a href="#">Tình cảm</a>
+      <a href="#">Hoạt hình</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#">QUỐC GIA▼</a>
+    <div class="dropdown-content">
+      <a href="#">Việt Nam</a>
+      <a href="#">Hàn Quốc</a>
+      <a href="#">Mỹ</a>
+    </div>
+  </div>
+
+  <a href="#">PHIM BỘ</a>
+  <a href="#">PHIM LẺ</a>
+  <a href="#">PHIM CHIẾU RẠP</a>
+</div>
+    <div class="section-title">PHIM ĐỀ CỬ</div>
+      <div class="movies-container">
+    <button class="carousel-button prev" onclick="moveCarousel(-1)"><i class="fas fa-chevron-left"></i></button>
+    <div class="movies-row" id="movies-row">
+      <div class="movie">
+        <div class="label">Tập 7 Vietsub</div>
+        <img src="https://image.tmdb.org/t/p/original//abeH7n5pcuQcwYcTxG6DTZvXLP1.jpg" alt="Phim 1">
+        <div class="title-sub">
+          <div class="movie-title">Lãnh Địa Tử Chiến</div>
+          <div class="movie-sub">MobLand</div>
+        </div>
+      </div>
+      <div class="movie">
+        <div class="label">Full Vietsub</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/3f15ef6775e832e304bc57ea9c741836.jpg" alt="Phim 2">
+        <div class="title-sub">
+          <div class="movie-title">Minions: Sự Trỗi Dậy Của Gru</div>
+          <div class="movie-sub">Minions: The Rise of Gru</div>
+        </div>
+      </div>
+      <div class="movie">
+        <div class="label">Tập 16 Vietsub</div>
+        <img src="https://kenh14cdn.com/203336854389633024/2025/3/24/48207153612126081802362482543174346994177221n-1741410152031-17414101521701977011714-1742746177132-17427461782081129379435-1742785571308-1742785571443591445732.jpg" alt="Phim 3">
+        <div class="title-sub">
+          <div class="movie-title">Khi Cuộc Đời Cho Bạn Quả Quýt</div>
+          <div class="movie-sub">When Life Gives You Tangerines</div>
+        </div>
+      </div>
+      <div class="movie">
+        <div class="label">Full Vietsub + thuyết minh</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/962de7ccfd7ece733d1128aa1db1343c.jpg" alt="Phim 4">
+        <div class="title-sub">
+          <div class="movie-title">Nàng Bạch Tuyết</div>
+          <div class="movie-sub">Snow White</div>
+        </div>
+      </div>
+      <div class="movie">
+        <div class="label">Full Vietsub</div>
+        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/p/o/poster_dai_chien_nguoi_khong_lo_7.jpg" alt="Phim 5">
+        <div class="title-sub">
+          <div class="movie-title">Đại Chiến Người Khổng Lồ: Lần Tấn Công Cuối Cùng</div>
+          <div class="movie-sub">Attack on Titan: THE LAST ATTACK</div>
+        </div>
+      </div>
+      <div class="movie">
+        <div class="label">Full Vietsub + thuyết minh</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/7db30b2f064b7023a7785a5ed73124e8.jpg" alt="Phim 6">
+        <div class="title-sub">
+          <div class="movie-title">Cửu Long Thành Trại: Vây Thành</div>
+          <div class="movie-sub">Twilight of the Warriors: Walled In</div>
+        </div>
+      </div>
+      <div class="movie">
+      <div class="label">Full Vietsub</div>
+      <img src="https://khenphim.com/wp-content/uploads/2022/12/Avatar2-poster_KP.webp" alt="Phim 7">
+      <div class="title-sub">
+      <div class="movie-title">Avatar 2: Dòng Chảy Của Nước</div>
+      <div class="movie-sub">Avatar: The Way of Water</div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-button next" onclick="moveCarousel(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="movie-new section-title">PHIM MỚI CẬP NHẬT</div>
+  <div class="container">
+    <div class="left-column">
+      <div class="movie-card">
+        <div class="label">Full Vietsub</div>
+        <img src="https://upload.wikimedia.org/wikipedia/vi/9/98/Mynhannguapphich.jpg" alt="phim card 1">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Mỹ Nhân Ngư</div>
+          <div class="movie-title-english">The Mermaid</div>
+        </div>
+      </div>
+        <div class="movie-card">
+          <div class="label">Tập 2 Vietsub</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/e62a3bbb2f11606077b9adc6c2dc1e1a.jpg" alt="phim card 2">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Một Chén Say Tình</div>
+          <div class="movie-title-english">Second Shot At Love</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Tập 16 Vietsub</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/69f8154c71396bf0e86ec7e46ddae33e.png" alt="phim card 3">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Dưa Hấu Lấp Lánh</div>
+          <div class="movie-title-english">Twinkling Watermelon</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/3/image/1800x/71252117777b696995f01934522c402d/t/e/teaser_cinema_1_.jpg" alt="phim card 4">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Yêu Nhầm Bạn Thân</div>
+          <div class="movie-title-english">Friend Zone
+</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/p/o/poster_2__4.jpg" alt="phim card 5">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Mật Vụ Phụ Hồ</div>
+          <div class="movie-title-english">A Working Man</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://cdn.galaxycine.vn/media/2025/4/21/lm8-500_1745206373828.jpg" alt="phim card 6">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Lật Mặt 8: Vòng Tay Nắng</div>
+          <div class="movie-title-english">Face Off 8: Embrace Of Light</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/339cf2dcac008da754edce6d7a391a9a.jpg" alt="phim card 7">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Thợ săn hoang mạc</div>
+          <div class="movie-title-english">Badland Hunters</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://m.media-amazon.com/images/M/MV5BZmEyZGExYzAtZDY0Yy00ODZjLTljY2YtMjA0YmY0MTQ0ZGNiXkEyXkFqcGc@._V1_.jpg" alt="phim card 8">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Siêu Lừa Gặp Siêu Lầy</div>
+          <div class="movie-title-english">Hustler vs Scammer</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Tập 7 Vietsub</div>
+        <img src="https://image.tmdb.org/t/p/original//abeH7n5pcuQcwYcTxG6DTZvXLP1.jpg" alt="phim card 9">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Lãnh Địa Tử Chiến</div>
+          <div class="movie-title-english">MobLand</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Tập 2 Vietsub</div>
+        <img src="https://kenh14cdn.com/203336854389633024/2025/3/24/48207153612126081802362482543174346994177221n-1741410152031-17414101521701977011714-1742746177132-17427461782081129379435-1742785571308-1742785571443591445732.jpg" alt="phim card 10">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Khi Cuộc Đời Cho Bạn Quả Quýt</div>
+          <div class="movie-title-english">When Life Gives You Tangerines</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/3f15ef6775e832e304bc57ea9c741836.jpg" alt="phim card 11">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Minions: Sự Trỗi Dậy Của Gru</div>
+          <div class="movie-title-english">Minions: The Rise of Gru</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub + thuyết minh</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/7db30b2f064b7023a7785a5ed73124e8.jpg" alt="phim card 12">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Cửu Long Thành Trại: Vây Thành</div>
+          <div class="movie-title-english">Twilight of the Warriors: Walled In</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://khenphim.com/wp-content/uploads/2022/12/Avatar2-poster_KP.webp" alt="phim card 13">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Avatar 2: Dòng Chảy Của Nước</div>
+          <div class="movie-title-english">Avatar: The Way of Water</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub + thuyết minh</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/962de7ccfd7ece733d1128aa1db1343c.jpg" alt="phim card 14">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Nàng Bạch Tuyết</div>
+          <div class="movie-title-english">Snow White</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/p/o/poster_dai_chien_nguoi_khong_lo_7.jpg" alt="phim card 15">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Đại Chiến Người Khổng Lồ: Lần Tấn Công Cuối Cùng</div>
+          <div class="movie-title-english">Attack on Titan: THE LAST ATTACK</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Tập 10 Vietsub</div>
+        <img src="https://static.nutscdn.com/vimg/300-0/955bb963617ffe081ecc2853f3df0f62.jpg" alt="phim card 16">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Đầu Gấu Học Nhóm</div>
+          <div class="movie-title-english">Study Group</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_lo3omWP0MbK2lCsCMmcabN-mi5gUZU0YzrNLTCI7HSXAjLVS" alt="phim card 17">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Mắt Biếc</div>
+          <div class="movie-title-english">Dreamy Eyes</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://upload.wikimedia.org/wikipedia/vi/9/98/Hobbs_and_Shaw_VN_poster.jpg" alt="phim card 18">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Quá Nhanh Quá Nguy Hiểm: Hobbs và Shaw</div>
+          <div class="movie-title-english">Fast & Furious Presents: Hobbs & Shaw</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/p/o/poster_minecraft_1.jpg" alt="phim card 19">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Một Bộ Phim Minecraft</div>
+          <div class="movie-title-english">A Minecraft Movie</div>
+        </div>
+      </div>
+         <div class="movie-card">
+          <div class="label">Full Vietsub</div>
+        <img src="https://upload.wikimedia.org/wikipedia/vi/5/55/%C4%90i%E1%BB%81u_k%E1%BB%B3_di%E1%BB%87u_%E1%BB%9F_ph%C3%B2ng_giam_s%E1%BB%91_7.jpg" alt="phim card 20">
+        <div class="movie-info">
+          <div class="movie-title-vietsub">Điều kỳ diệu ở phòng giam số 7</div>
+          <div class="movie-title-english">Number 7 Room's Gift</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="right-column">
+      <div class="ranking-section">
+        <div class="section-title-rank section-title">BẢNG XẾP HẠNG</div>
+        <div class="ranking-tabs">
+              <div class="ranking-tab active" onclick="showRanking('daily')">Ngày</div>
+              <div class="ranking-tab" onclick="showRanking('weekly')">Tuần</div>
+              <div class="ranking-tab" onclick="showRanking('monthly')">Tháng</div>
+        </div>
+        <div id="daily-ranking" class="ranking-list active">
+                    <div class="ranking-item">
+                        <img src="https://kenh14cdn.com/203336854389633024/2025/3/24/48207153612126081802362482543174346994177221n-1741410152031-17414101521701977011714-1742746177132-17427461782081129379435-1742785571308-1742785571443591445732.jpg" alt="Khi Cuộc Đời Cho Bạn Quả Quýt" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Khi Cuộc Đời Cho Bạn Quả Quýt</div>
+                            <div class="ranking-views">1712 lượt xem</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://static.nutscdn.com/vimg/300-0/69f8154c71396bf0e86ec7e46ddae33e.png" alt="Dưa Hậu Lấp Lánh" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Dưa Hậu Lấp Lánh</div>
+                            <div class="ranking-views">1095 lượt xem</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/p/o/poster_minecraft_1.jpg" alt="Một Bộ Phim Minecraft" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Một Bộ Phim Minecraft</div>
+                            <div class="ranking-views">808 lượt xem</div>
+                        </div>
+                    </div>
+          </div>
+          <div id="weekly-ranking" class="ranking-list">
+                    <div class="ranking-item">
+                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/3/image/1800x/71252117777b696995f01934522c402d/t/e/teaser_cinema_1_.jpg" alt="Yêu Nhầm Bạn Thân" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Yêu Nhầm Bạn Thân</div>
+                            <div class="ranking-views">8542 lượt xem</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://static.nutscdn.com/vimg/300-0/339cf2dcac008da754edce6d7a391a9a.jpg" alt="Thợ Săn Hoang Mạc" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Thợ Săn Hoang Mạc</div>
+                            <div class="ranking-views">7210 lượt xem</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/p/o/poster_dai_chien_nguoi_khong_lo_7.jpg" alt="Titan" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Đại Chiến Người Khổng Lồ: Lần Tấn Công Cuối Cùng</div>
+                            <div class="ranking-views">6895 lượt xem</div>
+                        </div>
+                    </div>
+          </div>
+          <div id="monthly-ranking" class="ranking-list">
+                    <div class="ranking-item">
+                        <img src="https://kenh14cdn.com/203336854389633024/2025/3/24/48207153612126081802362482543174346994177221n-1741410152031-17414101521701977011714-1742746177132-17427461782081129379435-1742785571308-1742785571443591445732.jpg" alt="Khi Cuộc Đời Cho Bạn Quả Quýt" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Khi Cuộc Đời Cho Bạn Quả Quýt</div>
+                            <div class="ranking-views">25430 lượt xem</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/5/55/%C4%90i%E1%BB%81u_k%E1%BB%B3_di%E1%BB%87u_%E1%BB%9F_ph%C3%B2ng_giam_s%E1%BB%91_7.jpg" alt="Điều kỳ diệu ở phòng giam số 7" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Điều kỳ diệu ở phòng giam số 7</div>
+                            <div class="ranking-views">21876 lượt xem</div>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://khenphim.com/wp-content/uploads/2022/12/Avatar2-poster_KP.webp" alt="Avatar 2: Dòng Chảy Của Nước" class="ranking-poster">
+                        <div class="ranking-info">
+                            <div class="ranking-movie">Avatar 2: Dòng Chảy Của Nước</div>
+                            <div class="ranking-views">19854 lượt xem</div>
+                        </div>
+                    </div>
+                </div>
+      </div>
+    </div>
+  </div>
+  <script src="JavaScript/webphim.js"></script>
+
+
+</body>
+</html>
